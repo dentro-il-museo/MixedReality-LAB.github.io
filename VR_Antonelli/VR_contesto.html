@@ -48,21 +48,18 @@
     <!-- a-nft is the anchor that defines an Image Tracking entity -->
     <!-- on 'url' use the path to the Image Descriptors created before. -->
     <!-- the path should end with the name without the extension e.g. if file is 'pinball.fset' the path should end with 'pinball' -->
+    
     <a-nft
-      type="nft"
-      url="<Target_Sezione/AR_marker_interno_bn>"
-      smooth="true"
-      smoothCount="10"
-      smoothTolerance=".01"
-      smoothThreshold="5"
-    >
-      <!-- as a child of the a-nft entity, you can define the content to show. here's a GLTF model entity -->
-       <a-entity
+            type='nft' url='AR.js/aframe/examples/image-tracking/nft/trex/trex-image/trex'
+            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
+          <a-entity
             position="0 0 0"
             scale="1 1 1"
             obj-model="obj: url(3D_Contesto/3D_Contesto.obj);"
         > </a-entity>
+       
     </a-nft>
+
     <!-- static camera that moves according to the device movemenents -->
     <a-entity camera></a-entity>
   </a-scene>
