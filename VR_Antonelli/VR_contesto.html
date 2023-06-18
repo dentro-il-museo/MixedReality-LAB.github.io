@@ -23,7 +23,7 @@
 
 <!-- rawgithack development URL -->
 <!--<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>-->
-<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
+<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
 
 
 <body style='margin : 0px; overflow: hidden;'>
@@ -38,15 +38,14 @@
 
         <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
         <a-nft
-            type='nft' url='VR_Antonelli/Target_Sezione/AR_marker_interno_bn'
+            type='nft' url='VR_Antonelli/Target_Sezione/AR_marker_contesto_bn'
             smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
              <a-entity
-            position="0 0 0"
-            scale="1 1 1"
-            obj-model="obj: url(3D_Contesto/3D_Contesto_low.obj);mtl: url(3D_Contesto/3D_Contesto_low.mtl);"
-            animation="property: rotation; dur: 6000; to: 0 360 0; loop: true; easing: linear;"
-            > 
-             </a-entity>
+                gltf-model='3D_Contesto/3D_contesto_compressed_alternative.gltf'
+                scale="1 1 1"
+                position="0 0 0"
+                >
+            </a-entity>
         </a-nft>
 		<a-entity camera></a-entity>
     </a-scene>
