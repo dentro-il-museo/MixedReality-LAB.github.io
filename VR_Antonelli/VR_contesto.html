@@ -1,8 +1,8 @@
-<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@c5eabc1ac708a76a0dbe9538c40ecd290af65714/dist/aframe-master.js"></script>
+<!-- Import A-Frame and AR.js libraries -->
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-
-<script>
-
+ 
+<!-- Loading Screen Styles -->
 <style>
   .arjs-loader {
     height: 100%;
@@ -16,40 +16,45 @@
     justify-content: center;
     align-items: center;
   }
-
+ 
   .arjs-loader div {
     text-align: center;
     font-size: 1.25em;
     color: white;
   }
 </style>
-
-<!-- rawgithack development URL -->
-<!--<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>-->
-<script src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js'></script>
-
-
-<body style='margin : 0px; overflow: hidden;'>
-   <!-- minimal loader shown until image descriptors are loaded -->
+ 
+<body style="margin : 0px; overflow: hidden;">
+  <!-- Minimal Loader Description until the assets are loaded -->
   <div class="arjs-loader">
     <div>Loading, please wait...</div>
   </div>
-    <a-scene
-        vr-mode-ui='enabled: false;'
-        renderer="logarithmicDepthBuffer: true; precision: medium;"
-        embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
-
-        <!-- use rawgithack to retrieve the correct url for nft marker (see 'pinball' below) -->
-        <a-nft
-            type='nft' url='https://github.com/MixedReality-LAB/MixedReality-LAB.github.io/tree/724c87954d0ad216605bf2a7c95cc1a8c1b96107/VR_Antonelli/Target_Contesto/AR_marker_contesto_bn'
-            smooth='true' smoothCount='10' smoothTolerance='0.01' smoothThreshold='5'>
-             <a-entity
-                gltf-model='https://github.com/MixedReality-LAB/MixedReality-LAB.github.io/VR_Antonelli/3D_Contesto/3D_contesto_compressed_alternative.gltf'
-                scale="1 1 1"
-                position="0 0 0"
-                >
-            </a-entity>
-        </a-nft>
-		<a-entity camera></a-entity>
-    </a-scene>
+ 
+  <!-- A-Frame Scene -->
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+    <!-- The NFT image used for Tracking -->
+    <a-nft
+      type="https://github.com/MixedReality-LAB/MixedReality-LAB.github.io/tree/main/VR_Antonelli/Target_Contesto/AR_marker_contesto_bn"
+      url="<Path to NTF Files>"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+      <!-- Define the GLTF model -->
+      <a-entity
+        gltf-model="https://github.com/MixedReality-LAB/MixedReality-LAB.github.io/blob/main/VR_Antonelli/3D_Contesto/3D_contesto_compressed_alternative.gltf"
+        scale="5 5 5"
+        position="50 150 0"
+      >
+      </a-entity>
+    </a-nft>
+    <!-- Create the Static Camera -->
+    <a-entity camera></a-entity>
+  </a-scene>
 </body>
